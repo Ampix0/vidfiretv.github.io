@@ -2,7 +2,8 @@
 
 :root {
     --colorRed: #e74c3c;
-    --mainWidth: 45%;
+    --mainWidth: 100%;
+    --cardSize: 60px;
 }
 
 
@@ -25,9 +26,14 @@ body {
     
 }
 
-@media (min-width: 650px){
+@media (min-width: 700px){
     body {
         font-size: 16px;
+    }
+
+    :root {
+        --cardSize: 150px;
+        --mainWidth: 45%;
     }
 }
 
@@ -59,16 +65,16 @@ header svg {
     display: flex;
     max-width: var(--mainWidth);   
     flex-direction: row;
-    margin: 2em auto;
     flex-wrap: wrap;
     justify-content: center;
+    margin: auto;
 }
 
 .memberCard {
-    display: inline-block;
-    min-width: 150px;
-    height: 150px;
-    margin: 1em;
+    display: flex;
+    min-width: var(--cardSize);
+    height: var(--cardSize);
+    margin: 0.5em;
     background-size: cover;
     background-position: center;
     transition:all 0.3s ease;
@@ -92,7 +98,7 @@ header svg {
     padding: 1em 1.2em;
     border-radius: 2em;
     color: #FFF;
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: bold;
     text-align: center;
     background-color: #ff7264;
@@ -107,7 +113,7 @@ header svg {
 }
 
 main p {
-    width: var(--mainWidth);
+    max-width: var(--mainWidth);
     text-align: center;
     margin:auto;
     padding: 1em;
